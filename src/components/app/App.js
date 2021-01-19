@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect} from "react";
-import ThemeSwitch from "./utills/themeSwitcher/ThemeSwitch";
+import ThemeSwitch from "../../utills/themeSwitcher/ThemeSwitch";
 
 
 function App() {
