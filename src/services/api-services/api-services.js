@@ -14,13 +14,13 @@ export const getAllPersons = () => {
 export const getPerson = (id) => {
         return instance.get(`people/${id}/`)
             .then((response) => {
-                console.log(response.data)
+
             })
 }
 export const getAllPlanets = () => {
     return instance.get(`planets/`)
-        .then((response) => {
-            console.log(response.data)
+        .then(({data}) => {
+            return console.log(data.results)
         })
 }
 export const getPlanet = (id) => {

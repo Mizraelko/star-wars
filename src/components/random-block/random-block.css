@@ -1,0 +1,17 @@
+.random-block {
+    display: flex;
+    align-items: flex-start;
+    height: 200px;
+    background-color: #333 !important;
+    border-radius: 25px 25px 55px 5px/5px 55px 25px 25px;
+    margin-top: 10px;
+}
+.random-block_img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+
+}
+.container_items {
+
+}
