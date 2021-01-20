@@ -24,10 +24,27 @@ export const getAllPlanets = () => {
 
         })
 }
-export const getPlanet = (id) => {
+
+const transformPlanet = () => {
+
+}
+const regExp = (item) => {
+    const regEx = /\/([0-9]*)\/$/;
+    return item.url.match(regEx)[1]
+}
+
+export const getPlanet = (id = Math.floor(Math.random() * 10) + 2) => {
     return instance.get(`planets/${id}/`)
         .then(({data}) => {
-            return data
+            const idItem = regExp(data);
+            const img = `https://starwars-visualguide.com/assets/img/planets/${idItem}.jpg`
+
+
+            return {
+                ...data,
+                img: img,
+                id: parseInt(idItem)
+            }
         })
 }
 export const getAllStarships = (id) => {

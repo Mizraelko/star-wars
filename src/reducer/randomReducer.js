@@ -1,6 +1,8 @@
+import {getPlanet} from "../services/api-services/api-services";
+
 const SET_PLANET = 'SET_PLANET';
 const initialState = {
-    planet: []
+
 }
 
 export const reducer = (state = initialState, action) => {
@@ -16,3 +18,9 @@ export const reducer = (state = initialState, action) => {
     }
 }
 
+export const setPlanet = () => {
+    getPlanet()
+        .then((obj) => {
+            setState(obj)
+        })
+}
