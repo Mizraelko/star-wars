@@ -2,16 +2,18 @@ import React from "react";
 import ThemeSwitch from "../../utills/themeSwitcher/ThemeSwitch";
 import Header from "../header/header";
 import RandomBlock from "../random-block/random-block";
+import LoadingIndicator from "../../utills/loadingIndicator/loadingIndicator";
 
 
 
-function App({state}) {
+function App() {
 
     return (
      <div className='app'>
-        <ThemeSwitch />
+         <ThemeSwitch />
         <Header />
         <RandomBlock/>
+         <LoadingIndicator/>
      </div>
 
 

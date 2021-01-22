@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setAction, setRandomPlanet} from "../../reducer/randomReducer";
+
 
 
 const instance = axios.create({
@@ -26,9 +26,6 @@ export const getAllPlanets = () => {
         })
 }
 
-const transformPlanet = () => {
-
-}
 const regExp = (item) => {
     const regEx = /\/([0-9]*)\/$/;
     return item.url.match(regEx)[1]
@@ -39,8 +36,6 @@ export const getPlanet = (id = Math.floor(Math.random() * 10) + 2) => {
         .then(({data}) => {
             const idItem = regExp(data);
             const img = `https://starwars-visualguide.com/assets/img/planets/${idItem}.jpg`
-            setAction(img, id, data)()
-
             return {
                 ...data,
                 img: img,
