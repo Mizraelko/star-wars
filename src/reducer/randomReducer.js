@@ -1,26 +1,40 @@
-import {getPlanet} from "../services/api-services/api-services";
+
+
 
 const SET_PLANET = 'SET_PLANET';
 const initialState = {
 
 }
-
-export const reducer = (state = initialState, action) => {
+const randomPlanetReducer = (state, action) => {
     switch (action.type) {
         case SET_PLANET:
             return {
                 ...state,
-                planet: action.planet
-
+                action
             }
         default:
             return state
     }
+
+
 }
 
-export const setPlanet = () => {
-    getPlanet()
-        .then((obj) => {
-            setState(obj)
-        })
+
+export const setAction = (img, id, {...planet}) => () => {
+
+    return function (img, id, {...planet}) {
+        console.log('use')
+        return {
+            type: SET_PLANET,
+            planet: {
+                ...planet,
+                img,
+                id: parseInt(id)
+            }
+        }
+    }
+
+
 }
+
+

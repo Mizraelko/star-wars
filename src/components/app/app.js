@@ -5,13 +5,13 @@ import RandomBlock from "../random-block/random-block";
 
 
 
-function App() {
+function App({state}) {
 
     return (
      <div className='app'>
         <ThemeSwitch />
         <Header />
-        <RandomBlock />
+        <RandomBlock/>
      </div>
 
 
